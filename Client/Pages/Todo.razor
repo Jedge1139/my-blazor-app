@@ -1,0 +1,30 @@
+﻿@page "/todo"
+
+<h1>Todo (@todos.Count(todo => !todo.IsDone))</h1> @*Shows the title of the page as well as counts how many todo items are not done.*@
+
+<ul>
+    @foreach (var todo in todos) @*Creates an unordered list*@
+    {
+        <li> @*Creates an unordered list*@
+            <input type="checkbox" @bind="todo.IsDone" /> @*This line includes a checkbox input that would mark the todo as done.*@
+            <input @bind="todo.Title" /> 
+        </li>
+    }
+</ul>
+
+<input placeholder="Something todo" @bind="newTodo" /> @*Adds an input box to the page.*@
+<button @onclick="AddTodo">Add todo</button> @*Adds a button to the page*@
+
+@code {
+    private List<TodoItem> todos = new(); @*This line is used to maintain the state of the todo list*@
+    private string newTodo; @*Adds the title for new todo elements*@
+
+    private void AddTodo() @*This is called when the button is clicked with an input entered into the text box*@
+    {
+        if (!string.IsNullOrWhiteSpace(newTodo))
+        {
+            todos.Add(new TodoItem { Title = newTodo }); @*Adds the specified title of todoItem to the list*@
+            newTodo = string.Empty; @*Clears the value of the text input by setting newTodo to an empty string.*@
+        }
+    }
+}
