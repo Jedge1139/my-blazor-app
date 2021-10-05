@@ -9,6 +9,6 @@ This project was created to gain a better understanding of using blazor. The cod
 
 
 ## Links 
-Link to Tutorial: https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-a-blazor-app?view=aspnetcore-5.0&pivots=server
+Link to Tutorial: https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-a-blazor-app?view=aspnetcore-5.0&pivots=server  
 Link to Blazor website: https://lemon-bay-004813d10.azurestaticapps.net/
 
